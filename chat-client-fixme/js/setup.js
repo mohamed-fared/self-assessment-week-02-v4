@@ -104,6 +104,7 @@ var displayData = function(data, user) {
   });
 };
 
+/// this is the resposible for sending the data to the server because it contain the post command 
 var postData = function(message, username) {
   $.ajax({
     url: SERVER_URL,
@@ -121,3 +122,10 @@ var postData = function(message, username) {
     }
   });
 };
+
+$("body").on("click","submitButton", function(){
+  var messageBox = $("#userInput")
+  var usernameBox = $("#userName")
+  var serverMessage = postData(messageBox,usernameBox)
+  
+})
